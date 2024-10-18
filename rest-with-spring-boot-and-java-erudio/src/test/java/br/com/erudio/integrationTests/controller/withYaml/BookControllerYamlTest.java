@@ -278,14 +278,14 @@ public class BookControllerYamlTest extends AbstractIntegrationTest {
 
         var content = unthreatedContent.replace("\n", "").replace("\r", "");
 
-        assertTrue(content.contains("rel: \"self\"    href: \"http://localhost:8080/api/book/v1/3\""));
-        assertTrue(content.contains("rel: \"self\"    href: \"http://localhost:8080/api/book/v1/5\""));
-        assertTrue(content.contains("rel: \"self\"    href: \"http://localhost:8080/api/book/v1/7\""));
+        assertTrue(content.contains("rel: \"self\"    href: \"http://localhost/api/book/v1/3\""));
+        assertTrue(content.contains("rel: \"self\"    href: \"http://localhost/api/book/v1/5\""));
+        assertTrue(content.contains("rel: \"self\"    href: \"http://localhost/api/book/v1/7\""));
 
-        assertTrue(content.contains("rel: \"first\"  href: \"http://localhost:8080/api/book/v1?direction=asc&page=0&size=12&sort=title,asc\""));
-        assertTrue(content.contains("rel: \"self\"  href: \"http://localhost:8080/api/book/v1?page=0&size=12&direction=asc\""));
-        assertTrue(content.contains("rel: \"next\"  href: \"http://localhost:8080/api/book/v1?direction=asc&page=1&size=12&sort=title,asc\""));
-        assertTrue(content.contains("rel: \"last\"  href: \"http://localhost:8080/api/book/v1?direction=asc&page=1&size=12&sort=title,asc\""));
+        assertTrue(content.contains("rel: \"first\"  href: \"http://localhost/api/book/v1?direction=asc&page=0&size=12&sort=title,asc\""));
+        assertTrue(content.contains("rel: \"self\"  href: \"http://localhost/api/book/v1?page=0&size=12&direction=asc\""));
+        assertTrue(content.contains("rel: \"next\"  href: \"http://localhost/api/book/v1?direction=asc&page=1&size=12&sort=title,asc\""));
+        assertTrue(content.contains("rel: \"last\"  href: \"http://localhost/api/book/v1?direction=asc&page=1&size=12&sort=title,asc\""));
 
         assertTrue(content.contains("page:  size: 12  totalElements: 15  totalPages: 2  number: 0"));
     }

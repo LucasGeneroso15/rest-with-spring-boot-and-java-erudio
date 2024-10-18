@@ -1,9 +1,10 @@
-package br.com.erudio.services;
+package br.com.erudio.unittests.services;
 
 import br.com.erudio.data.vo.v1.PersonVO;
 import br.com.erudio.exceptions.RequiredObjectIsNullException;
 import br.com.erudio.model.Person;
 import br.com.erudio.repositories.PersonRepository;
+import br.com.erudio.services.PersonServices;
 import br.com.erudio.unittests.mapper.mocks.MockPerson;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -44,7 +45,7 @@ class PersonServicesTest {
 
         when(repository.findAll()).thenReturn(list);
 
-        var people = service.findAll(pageable);
+        var people = service.findAll();
 
         assertNotNull(people);
         assertEquals(14, people.size());
@@ -84,6 +85,7 @@ class PersonServicesTest {
         assertEquals("First Name Test7", personSeven.getFirstName());
         assertEquals("Last Name Test7", personSeven.getLastName());
         assertEquals("Female", personSeven.getGender());
+
     }
 */
     @Test

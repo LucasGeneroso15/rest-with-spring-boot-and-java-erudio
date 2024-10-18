@@ -1,5 +1,6 @@
 package br.com.erudio.integrationTests.swagger;
 
+import static br.com.erudio.configs.TestConfigs.SERVER_PORT;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,7 +18,7 @@ public class SwaggerIntegrationTest extends AbstractIntegrationTest {
 		var content =
 			given()
 				.basePath("/swagger-ui/index.html")
-				.port(8080) // verificar erro posteriormente... Instrutor passou TestConfigs.SERVER_PORT, definida como 8888, porem a aplicação está subindo em 8080
+				.port(SERVER_PORT) // verificar erro posteriormente... Instrutor passou TestConfigs.SERVER_PORT, definida como 8888, porem a aplicação está subindo em 8080
 				.when()
 					.get()
 				.then()
