@@ -16,7 +16,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertNotNull;
 
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT, properties = {"server.port=8888"})
 @TestMethodOrder(OrderAnnotation.class)
 public class AuthControllerXmlTest extends AbstractIntegrationTest {
 

@@ -33,7 +33,7 @@ import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.specification.RequestSpecification;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT, properties = {"server.port=8888"})
 @TestMethodOrder(OrderAnnotation.class)
 public class BookControllerXmlTest extends AbstractIntegrationTest {
 
@@ -261,14 +261,14 @@ public class BookControllerXmlTest extends AbstractIntegrationTest {
 				.body()
 				.asString();
 
-		assertTrue(content.contains("<links><rel>self</rel><href>http://localhost/api/book/v1/3</href></links>"));
-		assertTrue(content.contains("<links><rel>self</rel><href>http://localhost/api/book/v1/5</href></links>"));
-		assertTrue(content.contains("<links><rel>self</rel><href>http://localhost/api/book/v1/7</href></links>"));
+		assertTrue(content.contains("<links><rel>self</rel><href>http://localhost:8888/api/book/v1/3</href></links>"));
+		assertTrue(content.contains("<links><rel>self</rel><href>http://localhost:8888/api/book/v1/5</href></links>"));
+		assertTrue(content.contains("<links><rel>self</rel><href>http://localhost:8888/api/book/v1/7</href></links>"));
 
-		assertTrue(content.contains("<links><rel>first</rel><href>http://localhost/api/book/v1?direction=asc&amp;page=0&amp;size=12&amp;sort=title,asc</href></links>"));
-		assertTrue(content.contains("<links><rel>self</rel><href>http://localhost/api/book/v1?page=0&amp;size=12&amp;direction=asc</href></links>"));
-		assertTrue(content.contains("<links><rel>next</rel><href>http://localhost/api/book/v1?direction=asc&amp;page=1&amp;size=12&amp;sort=title,asc</href></links>"));
-		assertTrue(content.contains("<links><rel>last</rel><href>http://localhost/api/book/v1?direction=asc&amp;page=1&amp;size=12&amp;sort=title,asc</href></links>"));
+		assertTrue(content.contains("<links><rel>first</rel><href>http://localhost:8888/api/book/v1?direction=asc&amp;page=0&amp;size=12&amp;sort=title,asc</href></links>"));
+		assertTrue(content.contains("<links><rel>self</rel><href>http://localhost:8888/api/book/v1?page=0&amp;size=12&amp;direction=asc</href></links>"));
+		assertTrue(content.contains("<links><rel>next</rel><href>http://localhost:8888/api/book/v1?direction=asc&amp;page=1&amp;size=12&amp;sort=title,asc</href></links>"));
+		assertTrue(content.contains("<links><rel>last</rel><href>http://localhost:8888/api/book/v1?direction=asc&amp;page=1&amp;size=12&amp;sort=title,asc</href></links>"));
 
 		assertTrue(content.contains("<page><size>12</size><totalElements>15</totalElements><totalPages>2</totalPages><number>0</number></page>"));
 	}

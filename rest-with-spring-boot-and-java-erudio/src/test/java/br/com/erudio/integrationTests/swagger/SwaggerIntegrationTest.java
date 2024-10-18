@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import br.com.erudio.configs.TestConfigs;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT, properties = {"server.port=8888"})
 public class SwaggerIntegrationTest extends AbstractIntegrationTest {
 
 	@Test

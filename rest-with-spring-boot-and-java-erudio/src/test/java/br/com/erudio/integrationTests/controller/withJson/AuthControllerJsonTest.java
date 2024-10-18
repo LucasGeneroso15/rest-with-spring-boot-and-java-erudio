@@ -18,7 +18,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import br.com.erudio.configs.TestConfigs;
 
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT, properties = {"server.port=8888"})
 @TestMethodOrder(OrderAnnotation.class)
 public class AuthControllerJsonTest extends AbstractIntegrationTest {
 
